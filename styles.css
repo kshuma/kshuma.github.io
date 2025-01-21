@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+body {
+    font-family: Arial, sans-serif; /* Use Arial for general text for readability */
+    background-image: url('background.webp'); /* Uses your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-left: 8px;
+    text-align: center;
+    color: #333; /* Ensure text is legible over the background */
+    backdrop-filter: brightness(0.9);
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #fff; /* Make title white for better contrast */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin: 5px 0;
+    color: #333; /* Deeper color for better visibility */
+}
+
+.player-table {
+    margin-bottom: 20px;
+}
+
+.player-table td {
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+
+input {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 5px;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    height: 30px; /* Adjust height for simplicity and readability */
+}
+
+button.unlock-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+button.unlock-button i {
+    font-size: 20px;
+    color: #333;
+}
+
+#puzzle-container, #letter-container {
+    margin: 10px 0; /* Reduce margin for the letter container */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.available-letters-title {
+    margin: 10px 0;  /* Reduced padding above and below the title */
+}
+
+.letter-box, .tile {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    font-size: 24px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tile {
+    pointer-events: none;
+    border: 2px dashed #ccc;
+    background-color: rgba(224, 224, 224, 0.8);
+}
+
+.tile.active {
+    cursor: pointer;
+    pointer-events: auto;
+    background-color: #add8e6;
+    border-color: #000;
+}
+
+.letter-box {
+    background-color: rgba(243, 243, 243, 0.8);
+    cursor: default;
+    visibility: hidden; /* Start hidden */
+}
+
+.letter-box.enabled {
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    visibility: visible; /* Show when enabled */
+}
